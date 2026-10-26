@@ -53,7 +53,7 @@ DB_PASSWORD=changeme_dev
 DB_NAME=bincom_db
 ```
 
-### 3. Run All Tasks
+### 3. Run All Tasks (Local)
 ```bash
 python main.py
 ```
@@ -61,4 +61,19 @@ python main.py
 ### 4. Run Unit Tests
 ```bash
 python -m unittest discover -s tests
+```
+
+---
+
+## Running with Docker (Recommended)
+
+You can spin up both PostgreSQL and the application container with one command:
+
+```bash
+docker compose up --build
+```
+
+To run unit tests inside Docker:
+```bash
+docker compose run --rm app python -m unittest discover -s tests
 ```
